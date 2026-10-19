@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 50px;
+            /* Use the Flask url_for and the correct image name */
+            background: url("{{ url_for('static', filename='image_deeb47.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        .container { 
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            max-width: 600px; 
+            margin: auto; 
+        }
+
+        h1 { color: #333; border-bottom: 2px solid #28a745; padding-bottom: 10px; }
+        
+        .result-box { 
+            background-color: #e9f7ef; 
+            border-left: 5px solid #28a745; 
+            padding: 20px; 
+            margin: 20px 0; 
+            font-size: 1.2rem; 
+        }
+
+        .details { margin-top: 20px; color: #666; }
+        
+        /* Button Styles */
+        .btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            margin-right: 10px;
+        }
+        
+        .btn-home { background-color: #6c757d; }
+        .btn-home:hover { background-color: #5a6268; }
+        
+        .btn-analysis { background-color: #28a745; }
+        .btn-analysis:hover { background-color: #218838; }
+
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        
+        <div class="result-box">
+            <strong>Estimated Score:</strong> {{ prediction }}
+        </div>
+
+        <div class="details">
+            <h3>Input Details:</h3>
+            <ul>
+                <li><strong>Gender:</strong> {{ input_data.gender }}</li>
+                <li><strong>Race:</strong> {{ input_data.race_ethnicity }}</li>
+                <li><strong>Parental Education:</strong> {{ input_data.parental_level_of_education }}</li>
+                <li><strong>Math Score:</strong> {{ input_data.math_score }}</li>
+                <li><strong>Reading Score:</strong> {{ input_data.reading_score }}</li>
+            </ul>
+        </div>
+
+        <a href="{{ url_for('show_analysis') }}" class="btn btn-analysis">View Detailed Analysis</a>
+        <a href="/" class="btn btn-home">Go Back</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome | Student Predictor</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+}
+
+.main-container{
+    text-align:center;
+    padding-top:50px;
+    animation:fadeIn 1.2s ease-in-out;
+}
+
+.main-container p{
+    color:#636e72;
+    line-height:1.6;
+    max-width:800px;
+    margin:20px auto;
+}
+
+.login-box{
+    width:350px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+
+.login-box h3{
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:#00b894;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.start-btn{
+    display:block;
+    width:350px;
+    margin:20px auto;
+    padding:15px;
+    text-decoration:none;
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    color:white;
+    border-radius:10px;
+    font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.google-btn{
+    display:block;
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:15px;
+    background:white;
+    color:#444;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="main-container">
+
+    <img src="{{ url_for('static', filename='images/Student performance and learning tools.png') }}"
+         alt="Logo"
+         style="max-width:150px; margin-bottom:20px;">
+
+    <h1>Welcome To!</h1>
+    <h2>Student Performance Predictor</h2>
+
+    <p>
+        Welcome to our Machine Learning analysis tool.
+        By analyzing demographic and academic data,
+        we provide accurate estimates of student
+        performance outcomes.
+    </p>
+
+    <div class="login-box">
+
+        <h3>Login</h3>
+
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('login') }}" method="post">
+
+            <input type="text" name="username" placeholder="Username" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit" class="login-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p style="margin:15px 0; color:#666;">OR</p>
+
+        <!-- ✅ Google Login Button (ONLY ONE) -->
+        <a href="{{ url_for('google.login') }}" class="google-btn">
+            🔵 Sign in with Google
+        </a>
+
+    </div>
+
+    <!-- Get Started -->
+    <a href="{{ url_for('index') }}" class="start-btn">
+        Get Started →
+    </a>
+
+</div>
+
+</body>
+</html>

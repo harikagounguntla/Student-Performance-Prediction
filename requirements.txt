@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+joblib
+Flask
+Flask-Dance
+requests
+oauthlib
+python-dotenv

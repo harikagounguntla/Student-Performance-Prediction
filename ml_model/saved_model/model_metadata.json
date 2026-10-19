@@ -1,0 +1,18 @@
+{
+    "model_details": {
+        "name": "Student Performance Predictor",
+        "version": "1.0.0",
+        "author": "ML Team",
+        "training_date": "2026-01-14 11:55:49"
+    },
+    "performance_metrics": {
+        "R2 Score": 0.8804332983749565,
+        "MAE": 4.21476314247485,
+        "MSE": 29.095169866715477
+    },
+    "bundle_contents": {
+        "model_file": "final_model.joblib",
+        "preprocessor_file": "preprocessor.joblib",
+        "feature_schema": "feature_names.json"
+    }
+}

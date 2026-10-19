@@ -1,0 +1,8 @@
+{
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.extraPaths": [
+        "./ml_model/data/processed"
+    ],
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
+}

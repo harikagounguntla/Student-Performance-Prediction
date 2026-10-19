@@ -1,0 +1,21 @@
+[
+    "num__reading_score",
+    "num__writing_score",
+    "cat__gender_female",
+    "cat__gender_male",
+    "cat__race_ethnicity_group A",
+    "cat__race_ethnicity_group B",
+    "cat__race_ethnicity_group C",
+    "cat__race_ethnicity_group D",
+    "cat__race_ethnicity_group E",
+    "cat__parental_level_of_education_associate's degree",
+    "cat__parental_level_of_education_bachelor's degree",
+    "cat__parental_level_of_education_high school",
+    "cat__parental_level_of_education_master's degree",
+    "cat__parental_level_of_education_some college",
+    "cat__parental_level_of_education_some high school",
+    "cat__lunch_free/reduced",
+    "cat__lunch_standard",
+    "cat__test_preparation_course_completed",
+    "cat__test_preparation_course_none"
+]
